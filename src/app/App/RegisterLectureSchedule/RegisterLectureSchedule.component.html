@@ -1,0 +1,99 @@
+<div class=" Schedule" id="Schedule">
+  <div class="schedule__body row">
+      <div class="col-md-9">
+        <div class="schedule__title">
+            <h1>Đăng ký lịch giảng dạy</h1>
+        </div>
+      </div>
+        <div class="col-md-12 m-3">
+            <div class="schedule__search row">
+                <div class="col-md-6">
+                    <input  
+                        pInputText  
+                        class="ng-invalid ng-dirty" 
+                        name="search" 
+                        [(ngModel)]="searchText" 
+                        (ngModelChange)="filterClasses()" 
+                        autocomplete="off" 
+                        placeholder="  Tìm kiếm lớp học"
+                    >
+                </div>
+            </div>
+        </div>
+      <div class="render_schedule">
+        <p-table
+        [value]="classes"
+        [paginator]="true"
+        [rows]="5"
+        [first]="first"
+        [showCurrentPageReport]="true"
+        [tableStyle]="{ 'min-width': '50rem' }"
+        currentPageReportTemplate="Hiển thị {first} tới {last} của {totalRecords} lịch học"
+        (onPage)="pageChange($event)"
+        [rowsPerPageOptions]="[10, 25, 50]"
+    >
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="NumericalOrder" style="width:5%">
+                    STT
+                    <p-sortIcon field="NumericalOrder" />
+                </th>
+                <th pSortableColumn="course_Code"  style="width:10%">
+                    Mã học phần
+                    <p-sortIcon field="course_Code" 
+                />
+                <th pSortableColumn="lopHoc"  style="width:10%">
+                    Lớp học
+                    <p-sortIcon field="lopHoc" 
+                />
+                <th pSortableColumn="phongHoc"  style="width:5%">
+                    Phòng học
+                    <p-sortIcon field="phongHoc" />
+                </th>
+                <th pSortableColumn="monHoc"  style="width:10%">
+                    Môn học
+                    <p-sortIcon field="monHoc" />
+                </th>
+                <th pSortableColumn="dateStart"  style="width:15%">
+                    Ngày bắt đầu
+                    <p-sortIcon field="dateStart" 
+                />
+                <th pSortableColumn="dateEnd"  style="width:15%">
+                  Ngày kết thúc
+                  <p-sortIcon field="dateEnd" 
+                />
+                <th pSortableColumn="lichHocTongList"  style="width:15%">
+                  Lịch học
+                  <p-sortIcon field="lichHocTongList" />
+                </th>
+                <th   style="width:25%">
+                    Đăng ký
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-customer >
+            <tr>
+                <td>{{ customer.NumericalOrder }}</td>
+                <td>{{ customer.course_Code }}</td>
+                <td>{{ customer.lopHoc }}</td>
+                <td>{{ customer.phongHoc }}</td>
+                <td>{{ customer.monHoc }}</td>
+                <td>{{ customer.dateStart }}</td>
+                <td>{{ customer.dateEnd }}</td>
+                <td>{{ customer.lichHocTongList }}</td>
+                <td class="actions">
+                    <p-confirmPopup />
+                    <p-button 
+                    class="m-2"
+                    (click)="Save($event, customer)" 
+                    severity="primary" 
+                    label="Chọn" 
+                    [outlined]="true" />
+                </td>
+            </tr>
+        </ng-template>
+         
+    </p-table>
+      </div>
+  </div>
+</div>
