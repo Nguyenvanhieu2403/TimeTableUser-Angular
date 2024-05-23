@@ -48,10 +48,15 @@ export class LoginComponent implements OnInit {
             }
           }
           else {
-            this.toastr.error('Đăng nhập thất bại');
+            this.toastr.error('Đăng nhập thất bại: ' + res.token);
           
           }
-      })
+      }, error => {
+        this.toastr.error('Đăng nhập thất bại: ' + error.error.message);
+      },
+      () => {
+      }
+    );
   };
   showPassword() {
     if (this.check == true) {

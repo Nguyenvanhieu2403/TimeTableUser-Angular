@@ -13,56 +13,56 @@
     </div>
     <div class="navbar__information">
         <ul class="navbar__information--list">
-            <li class="information__list--items">
+            <li class="information__list--items" [ngClass]="{'active': selectedNavItem === 'personalInfo'}" (click)="selectNavItem('personalInfo')">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
-                </svg>
-                <span class="information__list--items__text" >
-                    <a  id="information__list" onclick="Show()" (click)=" getInformation()">Thông tin cá nhân</a>
-                </span>
-                <ul class="change__information" id="change__information">
-                    <li class="change__information--items" (click)="ShowchangInfor()">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
-                        </svg>
-                        <span class="information__list--items__text">
-                            <a  id="change__info">Thay đổi thông tin</a>
-                        </span>
-                    </li>
-                    <li class="change__information--items" (click)="ShowchangPassword()">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
-                        </svg>
-                        <span class="information__list--items__text" id="change__password--icon">
-                            <a  id="change__password">Đổi mật khẩu</a>
-                        </span>
-                    </li>
-                </ul>
-            </li>
-            <li class="information__list--items"  (click)="ShowRegisterLectureSchedule()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
-                </svg>
-                <span class="information__list--items__text" >
-                    <a  id="Register_Schedule">Đăng ký lịch giảng</a>
-                </span>
-            </li>
-            <li class="information__list--items" (click)="ShowViewLectureSchedule()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                  <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
                 </svg>
                 <span class="information__list--items__text">
-                    <a  id="Registed__Schedule">Xem lịch giảng</a>
+                  <a id="information__list">Thông tin cá nhân</a>
                 </span>
-            </li>
-            <li class="information__list--items">
+                <ul class="change__information" *ngIf="selectedNavItem === 'personalInfo'">
+                  <li class="change__information--items" (click)="showChangeInfo()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                    </svg>
+                    <span class="information__list--items__text">
+                      <a id="change__info">Thay đổi thông tin</a>
+                    </span>
+                  </li>
+                  <li class="change__information--items" (click)="showChangePassword()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                    </svg>
+                    <span class="information__list--items__text" id="change__password--icon">
+                      <a id="change__password">Đổi mật khẩu</a>
+                    </span>
+                  </li>
+                </ul>
+              </li>
+              <li class="information__list--items" [ngClass]="{'active': selectedNavItem === 'registerSchedule'}" (click)="selectNavItem('registerSchedule')">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                  <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
                 </svg>
-                <span class="information__list--items__text navbar__header__logout"  (click)="Logout()">
-                    <a href="./index.html">Đăng xuất</a>
+                <span class="information__list--items__text">
+                  <a id="Register_Schedule">Đăng ký lịch giảng</a>
                 </span>
-            </li>
+              </li>
+              <li class="information__list--items" [ngClass]="{'active': selectedNavItem === 'viewSchedule'}" (click)="selectNavItem('viewSchedule')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                </svg>
+                <span class="information__list--items__text">
+                  <a id="Registed__Schedule">Xem lịch giảng</a>
+                </span>
+              </li>
+              <li class="information__list--items" [ngClass]="{'active': selectedNavItem === 'logout'}" (click)="Logout()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                </svg>
+                <span class="information__list--items__text navbar__header__logout">
+                  <a href="./index.html">Đăng xuất</a>
+                </span>
+              </li>
         </ul>
     </div>
 </div>

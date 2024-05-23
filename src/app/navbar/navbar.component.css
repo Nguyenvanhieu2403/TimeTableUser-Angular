@@ -93,3 +93,8 @@
     text-decoration: none;
     color: #fff;
 }
+/*  */
+.information__list--items.active {
+    color: #4CAF50;
+}
+  

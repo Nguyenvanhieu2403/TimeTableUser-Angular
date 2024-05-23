@@ -15,6 +15,7 @@ export class NavbarComponent implements OnInit {
   click: boolean = false;
   imgSrc: any;
   FullName: any;
+  selectedNavItem: string = '';
 
   constructor(private router: Router) { }
 
@@ -31,14 +32,18 @@ export class NavbarComponent implements OnInit {
       }
   }
 
+  selectNavItem(item: string) {
+    this.selectedNavItem = item;
+  }
+
   getInformation() {
     this.router.navigate(['/information']);
   }
 
-  ShowchangInfor() {
+  showChangeInfo() {
     this.router.navigate(['/changeInfor']);
   }
-  ShowchangPassword() {
+  showChangePassword() {
     this.router.navigate(['/changePassWord']);
   }
 
