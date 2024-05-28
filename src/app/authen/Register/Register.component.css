@@ -4,10 +4,20 @@
 }
 
 
-.container img {
-    width: 1519px;
-    height: 735px;
+.body {
+    background-image: url('../../../assets/img/background_register.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
 }
+
+/* .container {
+    background-image: url('../../../assets/img/background_register.png');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+} */
 
 .body_register {
     background-color: rgba(0,0,0,.5);
@@ -20,6 +30,7 @@
     align-items: center;
     padding: 10px 60px;
 }
+
 
 .account, .password, .retype, .fullname, .phonenumber, .email {
     height: 30px;

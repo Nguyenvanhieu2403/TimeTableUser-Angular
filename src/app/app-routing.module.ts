@@ -19,15 +19,6 @@ const routes: Routes = [
     ],
 
   },
-  {
-    path: '', component: LoginComponent,
-    children: [
-      {
-        path: 'login', loadChildren: () => import('./authen/Login/Login.module').then(m => m.LoginModule),
-      }
-    ],
-
-  },
   {   
     path: 'register', component: RegisterComponent,
   },
@@ -48,6 +39,9 @@ const routes: Routes = [
   },
   {
     path: 'viewLectureSchedule', component: ViewLectureScheduleComponent,
+  },
+  {
+    path: '*', component: IndexComponent,
   }
 ];
 

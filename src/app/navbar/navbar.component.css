@@ -35,7 +35,6 @@
     height: 60px;
     line-height: 60px;
     text-align: center;
-    padding: 0 10%;
     width: 100%;
 }
 
@@ -46,7 +45,7 @@
 .information__list--items {
     display: inline-block;
     font-size: 1.2rem;
-    padding: 20px 0 20px 20px;
+    padding: 20px 0 20px 15px;
     width: 100%;
 }
 
@@ -94,7 +93,18 @@
     color: #fff;
 }
 /*  */
-.information__list--items.active {
-    color: #4CAF50;
+.active svg {
+    color: #33b5e5;
 }
-  
+
+.active a {
+    color: #33b5e5;
+}
+
+.active span a {
+    color: #33b5e5;
+}
+
+.close_navbar--icon i{
+    color: #fff;
+}
