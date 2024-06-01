@@ -5,7 +5,7 @@
                 <app-navbar ></app-navbar>
             </div>
         </div>
-        <div class="bar_icon d-lg-none">
+        <div class="bar_icon d-lg-none" *ngIf="toShow">
             <i 
             (click)="toggleNavbar()" 
             class="pi pi-bars m-1"></i>

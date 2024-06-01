@@ -108,3 +108,14 @@
 .close_navbar--icon i{
     color: #fff;
 }
+
+@media screen and (max-width: 460px){
+    .img__user {
+        width: 45px;
+        height: 45px;
+    }
+
+    .name__fullname--text {
+        font-size: 1.3rem;
+    }
+}

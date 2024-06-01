@@ -26,7 +26,7 @@ export class AppComponent {
     }
     else {
       this.toShow=false;
-      this.body = "col-md-12"
+      this.body = "col-md-12 p-0"
     }
   }
 
@@ -53,6 +53,7 @@ export class AppComponent {
     this.router.navigate(['/login']);
     this.toShow=false;
   }
+  
   toggleNavbar() {
     const navbar = document.querySelector('.container_navbar');
     const leftSide = document.querySelector('.container_left_side');

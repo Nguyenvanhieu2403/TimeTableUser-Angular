@@ -24,7 +24,18 @@
         left: 0;
         display: block !important;
     }
+
+    .img__user {
+        width: 45px;
+        height: 45px;
+    }
+
+    .name__fullname--text {
+        font-size: 1.3rem;
+    }
+
 }
+
 @media screen and (min-width: 461px) and (max-width: 768px) {
     .container_navbar {
         position: fixed;
@@ -152,4 +163,5 @@
         left: 0;
         display: block !important;
     }
+
 }
